@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Title -->
+    <title>Bookmarker</title>
+  </head>
+  <body class="bg-light" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <!-- Container -->
+    <div class="container my-5" style="max-width: 720px;">
+      <!-- Bookmark Keeper -->
+      <div class="p-3 bg-body rounded shadow-sm slide-in">
+        <div class="mb-3">
+          <button id="toggle-theme"
+            class="btn btn-sm btn-outline-secondary"
+            type="button"
+            onclick="toggleTheme()"
+          >
+            <i class="fa-solid fa-sun" style="color: #FFD700; display: inline;"></i>
+          </button>
+        </div>
+        <!-- Bookmark Keeper Form -->
+        <form class="p-3 bg-body rounded shadow-sm" style="max-width: 720px;">
+          <h3 class="h3 fw-normal" style="color: #FF7F3E; text-align: center;">
+            <i class="fa-solid fa-bookmark me-2"></i> Your favorite Bookmarks keeper
+          </h3>
+          <div class="mb-3">
+            <label for="siteNameInput" class="form-label">
+              <i class="fa-solid fa-globe me-2"></i> Website Name
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="siteNameInput"
+              placeholder="Name"
+              aria-describedby="siteNameHelp"
+              autofocus
+            />
+            <div id="siteNameHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="siteUrlInput" class="form-label">
+              <i class="fa-solid fa-link me-2"></i> Website URL
+            </label>
+            <input
+              type="url"
+              class="form-control"
+              id="siteUrlInput"
+              placeholder="URL"
+              aria-describedby="siteUrlHelp"
+            />
+            <div id="siteUrlHelp" class="form-text"></div>
+          </div>
+          <button id="submit"
+            class="btn btn-primary w-100 py-2 pulse"
+            type="submit"
+          >
+            <i class="fa-solid fa-plus me-2"></i> Add to bookmark
+          </button>
+          <p class="mt-3 mb-2 text-body-secondary text-center">
+            &copy; 2024 by
+            <a href="#" target="_blank" rel="noopener noreferrer">Mamer</a>
+            . All rights reserved.
+          </p>
+        </form>
+
+        <!-- Bookmark Keeper List -->
+        <div class="my-3 p-3 bg-body rounded shadow-sm" style="max-width: 720px;">
+            <h6 class="border-bottom pb-2 mb-0">Recent bookmarks</h6>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="search-addon">
+                <i class="fa-solid fa-search"></i>
+              </span>
+              <input
+                type="search"
+                class="form-control"
+                id="search"
+                placeholder="Search bookmarks"
+                aria-label="Search bookmarks"
+                aria-describedby="search-addon"
+                style="width: 20rem"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="search-clear"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <!-- Data will show inside this next container -->
+            <div id="bookmarksView" class="fade-in"></div>
+            <small class="d-block text-end mt-3">
+              <a href="#">All suggestions</a>
+            </small>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts and libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
